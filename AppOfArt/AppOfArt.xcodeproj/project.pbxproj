@@ -28,6 +28,18 @@
 		051DECE41E486D6C00867766 /* CardLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DECE01E486D6C00867766 /* CardLayout.m */; };
 		051DECE51E486D6C00867766 /* CardSelectedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DECE21E486D6C00867766 /* CardSelectedLayout.m */; };
 		051DECE81E4870CD00867766 /* VideoListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DECE71E4870CD00867766 /* VideoListModel.m */; };
+		051DEDA01E48789100867766 /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED1A1E48789100867766 /* Factory.m */; };
+		051DEDA11E48789100867766 /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED1C1E48789100867766 /* HelpViewController.m */; };
+		051DEDA21E48789100867766 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED1F1E48789100867766 /* UIColor+FlatColors.m */; };
+		051DEDA31E48789100867766 /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED211E48789100867766 /* UIView+Addition.m */; };
+		051DEDCC1E48789100867766 /* UIButton+XHEnlarged.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED801E48789100867766 /* UIButton+XHEnlarged.m */; };
+		051DEDCD1E48789100867766 /* UIImage+XHGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED821E48789100867766 /* UIImage+XHGIF.m */; };
+		051DEDCE1E48789100867766 /* UIImageView+XHWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED841E48789100867766 /* UIImageView+XHWebCache.m */; };
+		051DEDCF1E48789100867766 /* XHImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED861E48789100867766 /* XHImageCache.m */; };
+		051DEDD01E48789100867766 /* XHLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED881E48789100867766 /* XHLaunchAd.m */; };
+		051DEDD11E48789100867766 /* XHWebImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED8A1E48789100867766 /* XHWebImageDownload.m */; };
+		05303B701E4AB054008628F7 /* HYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 05303B6F1E4AB054008628F7 /* HYNetworking.m */; };
+		1BD1AE4827E5505223A3E269 /* libPods-AppOfArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +85,33 @@
 		051DECE21E486D6C00867766 /* CardSelectedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardSelectedLayout.m; sourceTree = "<group>"; };
 		051DECE61E4870CD00867766 /* VideoListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListModel.h; sourceTree = "<group>"; };
 		051DECE71E4870CD00867766 /* VideoListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListModel.m; sourceTree = "<group>"; };
+		051DED191E48789100867766 /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		051DED1A1E48789100867766 /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
+		051DED1B1E48789100867766 /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		051DED1C1E48789100867766 /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		051DED1D1E48789100867766 /* MyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHelper.h; sourceTree = "<group>"; };
+		051DED1E1E48789100867766 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
+		051DED1F1E48789100867766 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		051DED201E48789100867766 /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		051DED211E48789100867766 /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		051DED521E48789100867766 /* Net.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Net.h; sourceTree = "<group>"; };
+		051DED7F1E48789100867766 /* UIButton+XHEnlarged.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+XHEnlarged.h"; sourceTree = "<group>"; };
+		051DED801E48789100867766 /* UIButton+XHEnlarged.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+XHEnlarged.m"; sourceTree = "<group>"; };
+		051DED811E48789100867766 /* UIImage+XHGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XHGIF.h"; sourceTree = "<group>"; };
+		051DED821E48789100867766 /* UIImage+XHGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XHGIF.m"; sourceTree = "<group>"; };
+		051DED831E48789100867766 /* UIImageView+XHWebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XHWebCache.h"; sourceTree = "<group>"; };
+		051DED841E48789100867766 /* UIImageView+XHWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+XHWebCache.m"; sourceTree = "<group>"; };
+		051DED851E48789100867766 /* XHImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHImageCache.h; sourceTree = "<group>"; };
+		051DED861E48789100867766 /* XHImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHImageCache.m; sourceTree = "<group>"; };
+		051DED871E48789100867766 /* XHLaunchAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHLaunchAd.h; sourceTree = "<group>"; };
+		051DED881E48789100867766 /* XHLaunchAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHLaunchAd.m; sourceTree = "<group>"; };
+		051DED891E48789100867766 /* XHWebImageDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageDownload.h; sourceTree = "<group>"; };
+		051DED8A1E48789100867766 /* XHWebImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageDownload.m; sourceTree = "<group>"; };
+		05303B6E1E4AB054008628F7 /* HYNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworking.h; sourceTree = "<group>"; };
+		05303B6F1E4AB054008628F7 /* HYNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworking.m; sourceTree = "<group>"; };
+		3205E0DB27A5B75F1006253B /* Pods-AppOfArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.debug.xcconfig"; sourceTree = "<group>"; };
+		B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppOfArt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6EA75BED79BC216CBF92B0 /* Pods-AppOfArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD1AE4827E5505223A3E269 /* libPods-AppOfArt.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +131,8 @@
 			children = (
 				051DEC8D1E48697E00867766 /* AppOfArt */,
 				051DEC8C1E48697E00867766 /* Products */,
+				161B777E1FF884B18926DDDC /* Pods */,
+				7DD6D1FE31BE93E2118D6D24 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				051DECA51E4869AD00867766 /* Classes */,
+				051DECE91E48789100867766 /* lib */,
 				051DECBE1E4869AD00867766 /* other */,
 				051DEC911E48697E00867766 /* AppDelegate.h */,
 				051DEC921E48697E00867766 /* AppDelegate.m */,
@@ -285,6 +328,8 @@
 				051DECBF1E4869AD00867766 /* Controller */,
 				051DECCB1E4869AD00867766 /* extenssion */,
 				051DECD01E4869AD00867766 /* Header.h */,
+				05303B6E1E4AB054008628F7 /* HYNetworking.h */,
+				05303B6F1E4AB054008628F7 /* HYNetworking.m */,
 				051DECD11E4869AD00867766 /* PrefixHeader.pch */,
 			);
 			path = other;
@@ -326,6 +371,69 @@
 			path = extenssion;
 			sourceTree = "<group>";
 		};
+		051DECE91E48789100867766 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				051DED181E48789100867766 /* Helper */,
+				051DED521E48789100867766 /* Net.h */,
+				051DED7E1E48789100867766 /* XHLaunchAd */,
+			);
+			name = lib;
+			path = Classes/lib;
+			sourceTree = "<group>";
+		};
+		051DED181E48789100867766 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				051DED191E48789100867766 /* Factory.h */,
+				051DED1A1E48789100867766 /* Factory.m */,
+				051DED1B1E48789100867766 /* HelpViewController.h */,
+				051DED1C1E48789100867766 /* HelpViewController.m */,
+				051DED1D1E48789100867766 /* MyHelper.h */,
+				051DED1E1E48789100867766 /* UIColor+FlatColors.h */,
+				051DED1F1E48789100867766 /* UIColor+FlatColors.m */,
+				051DED201E48789100867766 /* UIView+Addition.h */,
+				051DED211E48789100867766 /* UIView+Addition.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		051DED7E1E48789100867766 /* XHLaunchAd */ = {
+			isa = PBXGroup;
+			children = (
+				051DED7F1E48789100867766 /* UIButton+XHEnlarged.h */,
+				051DED801E48789100867766 /* UIButton+XHEnlarged.m */,
+				051DED811E48789100867766 /* UIImage+XHGIF.h */,
+				051DED821E48789100867766 /* UIImage+XHGIF.m */,
+				051DED831E48789100867766 /* UIImageView+XHWebCache.h */,
+				051DED841E48789100867766 /* UIImageView+XHWebCache.m */,
+				051DED851E48789100867766 /* XHImageCache.h */,
+				051DED861E48789100867766 /* XHImageCache.m */,
+				051DED871E48789100867766 /* XHLaunchAd.h */,
+				051DED881E48789100867766 /* XHLaunchAd.m */,
+				051DED891E48789100867766 /* XHWebImageDownload.h */,
+				051DED8A1E48789100867766 /* XHWebImageDownload.m */,
+			);
+			path = XHLaunchAd;
+			sourceTree = "<group>";
+		};
+		161B777E1FF884B18926DDDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3205E0DB27A5B75F1006253B /* Pods-AppOfArt.debug.xcconfig */,
+				FC6EA75BED79BC216CBF92B0 /* Pods-AppOfArt.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DD6D1FE31BE93E2118D6D24 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,9 +441,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 051DECA21E48697E00867766 /* Build configuration list for PBXNativeTarget "AppOfArt" */;
 			buildPhases = (
+				543D69E9633CFEB2EE9C1BCF /* [CP] Check Pods Manifest.lock */,
 				051DEC871E48697E00867766 /* Sources */,
 				051DEC881E48697E00867766 /* Frameworks */,
 				051DEC891E48697E00867766 /* Resources */,
+				69859F120D262FB367B09807 /* [CP] Embed Pods Frameworks */,
+				24C10820640266F5914EF18C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -393,19 +504,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		24C10820640266F5914EF18C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		543D69E9633CFEB2EE9C1BCF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		69859F120D262FB367B09807 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		051DEC871E48697E00867766 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				051DEDD11E48789100867766 /* XHWebImageDownload.m in Sources */,
+				051DEDCF1E48789100867766 /* XHImageCache.m in Sources */,
 				051DEC961E48697E00867766 /* ViewController.m in Sources */,
 				051DEC931E48697E00867766 /* AppDelegate.m in Sources */,
+				051DEDCD1E48789100867766 /* UIImage+XHGIF.m in Sources */,
+				051DEDD01E48789100867766 /* XHLaunchAd.m in Sources */,
 				051DECE31E486D6C00867766 /* CardCellCollectionViewCell.m in Sources */,
+				051DEDA01E48789100867766 /* Factory.m in Sources */,
+				051DEDCC1E48789100867766 /* UIButton+XHEnlarged.m in Sources */,
+				051DEDA31E48789100867766 /* UIView+Addition.m in Sources */,
 				051DECD41E4869AD00867766 /* HYThreeVC.m in Sources */,
+				05303B701E4AB054008628F7 /* HYNetworking.m in Sources */,
 				051DECD71E4869AD00867766 /* UIViewController+CustomNavigationExtension.m in Sources */,
 				051DECDB1E4869AD00867766 /* UIBarButtonItem+HYExtenssion.m in Sources */,
 				051DECD91E4869AD00867766 /* HYtabBarVC.m in Sources */,
+				051DEDA11E48789100867766 /* HelpViewController.m in Sources */,
 				051DECD51E4869AD00867766 /* HYTwoVC.m in Sources */,
+				051DEDA21E48789100867766 /* UIColor+FlatColors.m in Sources */,
 				051DEC901E48697E00867766 /* main.m in Sources */,
 				051DECD81E4869AD00867766 /* HYtabBar.m in Sources */,
 				051DECE51E486D6C00867766 /* CardSelectedLayout.m in Sources */,
@@ -415,6 +584,7 @@
 				051DECD61E4869AD00867766 /* CustomNavigationController.m in Sources */,
 				051DECD31E4869AD00867766 /* HYOneVC.m in Sources */,
 				051DECDC1E4869AD00867766 /* UIView+HYExtension.m in Sources */,
+				051DEDCE1E48789100867766 /* UIImageView+XHWebCache.m in Sources */,
 				051DECE41E486D6C00867766 /* CardLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +705,7 @@
 		};
 		051DECA31E48697E00867766 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3205E0DB27A5B75F1006253B /* Pods-AppOfArt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYUUR96E57;
@@ -547,6 +718,7 @@
 		};
 		051DECA41E48697E00867766 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC6EA75BED79BC216CBF92B0 /* Pods-AppOfArt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYUUR96E57;
@@ -576,6 +748,7 @@
 				051DECA41E48697E00867766 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

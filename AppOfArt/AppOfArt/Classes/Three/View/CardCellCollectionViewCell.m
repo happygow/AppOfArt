@@ -10,8 +10,9 @@
 
 @interface CardCellCollectionViewCell()
 
-//@property(nonatomic, strong)UILabel* titleLabel;
-//@property(nonatomic, strong)UIImageView* imageView;
+
+/** 标题 */
+
 @property(nonatomic, strong)UIVisualEffectView* blurView;
 
 @end
@@ -20,106 +21,70 @@ static int cellCount;
 
 @implementation CardCellCollectionViewCell
 
--(instancetype)init
-{
-    self = [self initWithFrame:CGRectZero];
-    return self;
-}
+//-(instancetype)init
+//{
+//    self = [self initWithFrame:CGRectZero];
+//    return self;
+//}
 
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         
-         CGFloat width = frame.size.width;
+        CGFloat width = frame.size.width;
         CGFloat height = frame.size.height;
         self.layer.cornerRadius = 6;
         self.layer.masksToBounds = YES;
+        self.contentView.backgroundColor = [UIColor whiteColor];
         
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
-        [self.contentView addSubview:self.imageView];
+       
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, width, 30)];
-        self.titleLabel.textColor = [UIColor blackColor];
+        
+        // coverImage
+        self.coverImg = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+        self.coverImg.backgroundColor = [UIColor yellowColor];
+        [self.contentView addSubview:self.coverImg];
+        
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, width, 30)];
+        //self.titleLabel.backgroundColor = [UIColor redColor];
+        
+        self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.font = [UIFont systemFontOfSize:15];
+        self.titleLabel.textAlignment = 1; // 1是center
+        //self.titleLabel.text = @"1223123131";
+        //self.contentView.alpha = 0.9;
         [self.contentView addSubview:self.titleLabel];
-        
 //
         //[self initUI];
         
         cellCount++;
-        NSLog(@"%d",cellCount);
+        NSLog(@"cellCount %d",cellCount);
     }
     return self;
 }
 
--(void)layoutSubviews
-{
-    self.contentView.frame = self.bounds;
-    self.titleLabel.center = CGPointMake(self.bounds.size.width/2.0, 2 + self.titleLabel.frame.size.height/2.0);
-    self.imageView.frame = self.bounds;
-    self.blurView.frame = self.bounds;
-}
-
--(void)initUI
-{
-    
-//    _imageView = [[UIImageView alloc] init];
-//    _imageView.image = [UIImage imageNamed:@"1"];
-//    [self.contentView addSubview:_imageView];
-    
-//    
-//    _messageLabel = [[UILabel alloc] init];
-//    _messageLabel.textColor = [UIColor yellowColor];
-//    
-    
-    
-    
-    
-    [self.contentView addSubview:self.titleLabel];
-    self.layer.cornerRadius = 6;
-    self.layer.masksToBounds = YES; 
-}
-
-//-(UILabel*)titleLabel
+//-(void)layoutSubviews
 //{
-//    if (!_titleLabel) {
-//        _titleLabel = [[UILabel alloc]init];
-//        _titleLabel.font = [UIFont systemFontOfSize:14];
-//        _titleLabel.textColor = [UIColor whiteColor];
-//    }
-//    return _titleLabel;
+//    self.contentView.frame = self.bounds;
+//    self.titleLabel.center = CGPointMake(self.bounds.size.width/2.0, 2 + self.titleLabel.frame.size.height/2.0);
+//    //self.imageView.frame = self.bounds;
+//    self.blurView.frame = self.bounds;
 //}
 
-//-(void)setTitle:(NSString *)title
+
+
+//- (void)setModel:(VideoListModel *)model
 //{
-//    _title = title;
-//    self.titleLabel.text = title;
+//    _model = model;
+//    
+//    self.titleLabel.text = model.titleLabel;
 //    [self.titleLabel sizeToFit];
 //    [self setNeedsLayout];
+//    [self.coverImg sd_setImageWithURL:[NSURL URLWithString:model.ImageView]];
+//    
+//    
 //}
-//
-//-(void)setBgColor:(UIColor *)bgColor
-//{
-//    self.contentView.backgroundColor = bgColor;
-//}
-//
-//-(void)setImage:(UIImage *)image
-//{
-//    _image = image;
-//    [self.imageView removeFromSuperview];
-//    self.imageView = [[UIImageView alloc]initWithImage:image];
-//    [self.contentView addSubview:self.imageView];
-//}
-
-//
-- (void)setModel:(VideoListModel *)model
-{
-    _model = model;
-    
-    self.titleLabel.text = model.titleLabel;
-    
-}
  //设置毛玻璃效果
 -(void)setBlur:(CGFloat)ratio
 {

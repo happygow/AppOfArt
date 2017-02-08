@@ -11,22 +11,11 @@
 
 @interface CardCellCollectionViewCell : UICollectionViewCell    
 
-//@property(nonatomic, strong)NSString* title;
-//@property(nonatomic, strong)UIColor* bgColor;
-//@property(nonatomic, strong)UIImage* image;
+@property (nonatomic, strong) UILabel *titleLabel;
+/** 图片 */
+@property (nonatomic, strong) UIImageView *coverImg;
 // model
 @property (nonatomic , strong) VideoListModel *model;
-/** 图片 */
-@property (nonatomic, strong) UIImageView *imageView;
-
-//@property (nonatomic, strong) UIImageView *shadeView;
-
-/** 标题 */
-@property (nonatomic, strong) UILabel *titleLabel;
-
-/** Message */
-//@property (nonatomic, strong) UILabel *messageLabel;
-
 
 -(void)setBlur:(CGFloat)ratio; //设置毛玻璃效果
 

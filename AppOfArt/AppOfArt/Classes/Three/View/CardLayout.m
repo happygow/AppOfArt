@@ -93,13 +93,13 @@ static CGFloat cellHeight;  //卡片宽度
 {
     NSInteger rowCount = [self.collectionView numberOfItemsInSection:0];
     //如果超过两张卡片，则用多卡片布局
-    if (rowCount >2) {
+    //if (rowCount >2) {
         return [self getAttributesWhen3orMoreRows:indexPath];
-    }
-    else
-    {
-        return [self getAttributesWhenLessThan2:indexPath];
-    }
+//    //}
+//    else
+//    {
+//       // return [self getAttributesWhenLessThan2:indexPath];
+//    }
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -107,16 +107,16 @@ static CGFloat cellHeight;  //卡片宽度
 }
 
 #pragma mark - 私有方法
-
-//少于等于两张时的布局
--(UICollectionViewLayoutAttributes*)getAttributesWhenLessThan2:(NSIndexPath*)indexPath
-{
-    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-    
-    CGFloat originY = GBL_UIKIT_D1 + indexPath.row *(cellHeight+GBL_UIKIT_D0);
-    attributes.frame = CGRectMake(GBL_UIKIT_D0, originY, cellWidth, cellHeight);
-    return attributes;
-}
+//
+////少于等于两张时的布局
+//-(UICollectionViewLayoutAttributes*)getAttributesWhenLessThan2:(NSIndexPath*)indexPath
+//{
+//    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+//    
+//    CGFloat originY = GBL_UIKIT_D1 + indexPath.row *(cellHeight+GBL_UIKIT_D0);
+//    attributes.frame = CGRectMake(GBL_UIKIT_D0, originY, cellWidth, cellHeight);
+//    return attributes;
+//}
 
 //超过三张时的布局
 -(UICollectionViewLayoutAttributes*)getAttributesWhen3orMoreRows:(NSIndexPath*)indexPath

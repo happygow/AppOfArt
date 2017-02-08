@@ -40,7 +40,7 @@ static CGFloat cellHeight;  //卡片宽度
         cellWidth = [UIScreen mainScreen].bounds.size.width -12*2;
         cellHeight = HYScreenHeight;
         self.cellToTop = -cellHeight;
-        self.cellToBottom = [UIScreen mainScreen].bounds.size.height + cellHeight;
+        self.cellToBottom = [UIScreen mainScreen].bounds.size.height + HYValue(30);
         self.cellLayoutList = [NSMutableArray array];
     }
     return self;
