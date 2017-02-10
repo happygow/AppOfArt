@@ -47,8 +47,8 @@ static CGFloat cellHeight;  //卡片宽度
         self.cellLayoutList = [NSMutableArray array];
         
         self.screenHeight = [UIScreen mainScreen].bounds.size.height;
-        self.m0 = 1000;
-        self.n0 = 550;
+        self.m0 = 900;
+        self.n0 = 750;
         self.deltaOffsetY = 140;
     }
     return self;
@@ -93,13 +93,13 @@ static CGFloat cellHeight;  //卡片宽度
 {
     NSInteger rowCount = [self.collectionView numberOfItemsInSection:0];
     //如果超过两张卡片，则用多卡片布局
-    //if (rowCount >2) {
+    if (rowCount >2) {
         return [self getAttributesWhen3orMoreRows:indexPath];
-//    //}
-//    else
-//    {
-//       // return [self getAttributesWhenLessThan2:indexPath];
-//    }
+    }
+    else
+    {
+        return [self getAttributesWhenLessThan2:indexPath];
+    }
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
@@ -108,15 +108,15 @@ static CGFloat cellHeight;  //卡片宽度
 
 #pragma mark - 私有方法
 //
-////少于等于两张时的布局
-//-(UICollectionViewLayoutAttributes*)getAttributesWhenLessThan2:(NSIndexPath*)indexPath
-//{
-//    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
-//    
-//    CGFloat originY = GBL_UIKIT_D1 + indexPath.row *(cellHeight+GBL_UIKIT_D0);
-//    attributes.frame = CGRectMake(GBL_UIKIT_D0, originY, cellWidth, cellHeight);
-//    return attributes;
-//}
+//少于等于两张时的布局
+-(UICollectionViewLayoutAttributes*)getAttributesWhenLessThan2:(NSIndexPath*)indexPath
+{
+    UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
+    
+    CGFloat originY = GBL_UIKIT_D1 + indexPath.row *(cellHeight+GBL_UIKIT_D0);
+    attributes.frame = CGRectMake(GBL_UIKIT_D0, originY, cellWidth, cellHeight);
+    return attributes;
+}
 
 //超过三张时的布局
 -(UICollectionViewLayoutAttributes*)getAttributesWhen3orMoreRows:(NSIndexPath*)indexPath
@@ -133,35 +133,9 @@ static CGFloat cellHeight;  //卡片宽度
     CGFloat rat = [self transformRatio:originY];
     attributes.transform = CGAffineTransformMakeScale(rat, rat);
     
-    //计算透明度
-    //y = (1-1.14x)^0.3
-    CGFloat blur = 0;
-    if ((1-1.14*rat) < 0 ) {
-        blur = 0;
-    }
-    else
-    {
-        blur = powf((1-1.14*rat), 0.4);
-    }
-    [self.blurList setObject:@(blur) atIndexedSubscript:indexPath.row];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(updateBlur:ForRow:)]) {
-        [self.delegate updateBlur:blur ForRow:indexPath.row];
-    }
-    
+
     attributes.zIndex = originY;    //这里设置zIndex，是为了cell的层次顺序达到下面的cell覆盖上面的cell的效果
     return attributes;
-}
-
--(NSMutableArray*)blurList
-{
-    if (!_blurList) {
-        _blurList = [NSMutableArray array];
-        NSInteger rowCount = [self.collectionView numberOfItemsInSection:0];
-        for (NSInteger row = 0; row < rowCount; row++) {
-            [_blurList addObject:@0];
-        }
-    }
-    return _blurList;
 }
 
 -(CGFloat)getContentSizeY

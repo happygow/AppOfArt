@@ -18,6 +18,8 @@
 #define categate @"http://baobab.wandoujia.com/api/v1/categories.Bak?"
 // 每日列表
 #define dailyList @"http://baobab.wandoujia.com/api/v1/feed.bak?num=%ld&date=%@"
+// 创意
+#define idealList @"http://baobab.kaiyanapp.com/api/v1/videos.bak?strategy=date&categoryName=%E5%88%9B%E6%84%8F&num=10"
 // 作者
 #define Author @"http://baobab.wandoujia.com/api/v3/tabs/pgcs/more?start=0&num=10"
 #define AuthorDetail1 @"http://baobab.wandoujia.com/api/v3/pgc/videos?_s=4667dd0eacb22bce6099c0d2c1dd5886&f=iphone&net=wifi&num=20&p_product=EYEPETIZER_IOS&pgcId="

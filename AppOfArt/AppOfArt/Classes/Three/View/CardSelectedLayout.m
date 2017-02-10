@@ -37,8 +37,8 @@ static CGFloat cellHeight;  //卡片宽度
 {
     self = [super init];
     if (self) {
-        cellWidth = [UIScreen mainScreen].bounds.size.width -12*2;
-        cellHeight = HYScreenHeight;
+        cellWidth = HYScreenWidth ;//[UIScreen mainScreen].bounds.size.width ;
+        cellHeight = HYScreenHeight - 49;
         self.cellToTop = -cellHeight;
         self.cellToBottom = [UIScreen mainScreen].bounds.size.height + HYValue(30);
         self.cellLayoutList = [NSMutableArray array];
@@ -54,34 +54,34 @@ static CGFloat cellHeight;  //卡片宽度
     [self.collectionView setContentOffset:CGPointMake(0, self.contentOffsetY)];
     
     CGFloat scale = 1;
-    CGFloat width = cellWidth;
+    CGFloat width = HYScreenWidth;
     CGFloat height = cellHeight;
     NSInteger rowsCount = [self.collectionView numberOfItemsInSection:0];
     for (NSInteger row = 0; row < rowsCount; row++) {
         NSIndexPath* cellIndexPath = [NSIndexPath indexPathForRow:row inSection:0];
         UICollectionViewLayoutAttributes* attribute = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:cellIndexPath];
         
-        CGFloat centerX = self.collectionView.bounds.size.width/2.0;
+        CGFloat centerX = cellWidth/2.0;
         CGFloat currentY = 0;
         if (row < self.selectedIndexPath.row) {
             currentY = self.contentOffsetY + self.cellToTop ;
-            scale = 0.8;
+            scale = HYValue(0.97);
             height = cellHeight;
         }
         else if (row == self.selectedIndexPath.row)
         {
             height = cellHeight;
             currentY = self.contentOffsetY + (self.collectionView.bounds.size.height)/2.0 - height/2.0;
-            scale = 1;
+            scale = HYValue(0.97);
             
         }
         else
         {
             height = cellHeight;
             currentY = self.contentOffsetY + self.cellToBottom;
-            scale = 1.2;
+            scale = HYValue(0.97);
         }
-        attribute.frame = CGRectMake(centerX - cellWidth/2.0, currentY, width , height);
+        attribute.frame = CGRectMake(centerX - cellWidth/2.0 + HYValue(12), currentY, width , height);
         CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
         attribute.transform = transform;
         attribute.zIndex = row;
@@ -92,7 +92,7 @@ static CGFloat cellHeight;  //卡片宽度
 
 - (CGSize)collectionViewContentSize
 {
-    return CGSizeMake(self.collectionView.frame.size.width, self.contentSizeHeight );
+    return CGSizeMake(HYScreenWidth, self.contentSizeHeight );
 }
 
 -(CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset

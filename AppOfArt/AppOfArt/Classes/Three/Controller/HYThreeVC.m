@@ -11,6 +11,7 @@
 #import "CardSelectedLayout.h"
 #import "CardCellCollectionViewCell.h"
 #import "VideoListModel.h"
+#import "videoDeatilVC.h"
 
 #define RGBAColor(r,g,b,a)  [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 #define RGBColor(r,g,b)     RGBAColor(r,g,b,1.0)
@@ -26,12 +27,15 @@ static NSString *ID = @"cell";
 }
 
 @property(nonatomic, strong)UICollectionView *cardCollectionView;
+// uiview
+
 @property(nonatomic, strong)UICollectionViewLayout *cardLayout;
 @property(nonatomic, strong)UICollectionViewLayout *cardLayoutStyle1;
 @property(nonatomic, strong)UICollectionViewLayout *cardLayoutStyle2;
 @property(nonatomic, strong)UITapGestureRecognizer *tapGesCollectionView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) NSMutableArray *ListArr;
+// nextpage
+@property (nonatomic , strong) NSString *nextPage;
 
 @end
 
@@ -47,12 +51,6 @@ static NSString *ID = @"cell";
     self.cardLayoutStyle1 =  [[CardLayout alloc]initWithOffsetY:400];
     self.cardLayout = self.cardLayoutStyle1;
     ((CardLayout*)self.cardLayoutStyle1).delegate = self;
-    //_cardCollectionView.dataSource = self;
-    
-    
-    
-    
-    
     
     _cardCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0 , self.view.bounds.size.width, collectionHeight) collectionViewLayout:self.cardLayout];
     [_cardCollectionView registerClass:[CardCellCollectionViewCell class] forCellWithReuseIdentifier:ID];
@@ -60,54 +58,118 @@ static NSString *ID = @"cell";
     _cardCollectionView.dataSource = self;
     [_cardCollectionView setContentOffset:CGPointMake(0, 400)];
     _cardCollectionView.backgroundColor = RGBColorC(0x2D3142);
-
-    
-    
+  
     [self loadDate];
-    
-    //[_cardCollectionView registerClass:[CardCellCollectionViewCell class] forCellWithReuseIdentifier:ID];
 
     [self.view addSubview:self.cardCollectionView];
-
+    
+    
+    
+    
+    // 默认 下拉刷新
+    self.cardCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadDate)];
+    
+    // 上拉刷新
+    self.cardCollectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    [self setUpRefresh];
 
 }
 
+- (void)setUpRefresh
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self loadDate];
+    }];
+    self.cardCollectionView.mj_header = header;
+    MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [self loadMoreData];
+    }];
+    self.cardCollectionView.mj_footer = footer;
+}
 
 - (void)loadDate
 {
-    NSString *str = [self changeTime:[self getdate]];
-    NSString *urlStr = [NSString stringWithFormat:dailyList,10,str];
-    
-    [HYNetworking getWithUrl:urlStr refreshCache:YES params:nil success:^(id response) {
-        HYLog(@"%@",response);
-        
-        for (NSDictionary *videoList in response[@"dailyList"]) {
-            NSArray *temp = [videoList objectForKey:@"videoList"];
-            
-            for (NSDictionary *dict in temp) {
-                VideoListModel *model = [[VideoListModel alloc]init];
-                model.titleLabel = [NSString stringWithFormat:@"%@",dict[@"title"]];
-                model.ImageView = [NSString stringWithFormat:@"%@",dict[@"coverForDetail"]];
-
-                [_dataArray addObject:model];
+//    NSString *str = [self changeTime:[self getdate]];
+//    NSString *urlStr = [NSString stringWithFormat:dailyList,10,str];
    
-                
-                
-            }
-            [_cardCollectionView reloadData];
+    
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD showWithStatus:@"数据正在加载中哦..."];
+    
+    
+    
+    [HYNetworking getWithUrl:idealList refreshCache:YES params:nil success:^(id response) {
+        HYLog(@"%@",response);
+       // next page
+        self.nextPage = [NSString stringWithFormat:@"%@",response[@"nextPageUrl"]];
+        NSDictionary *videoListDict = [response objectForKey:@"videoList"];
+        
+        
+        for (NSDictionary *dic  in videoListDict) {
+            VideoListModel *model = [[VideoListModel alloc] init];
+            [_dataArray addObject:model];
             
-            
+            model.titleLabel = [NSString stringWithFormat:@"%@",dic[@"title"]];
+            model.ImageView = [NSString stringWithFormat:@"%@",dic[@"coverForDetail"]];
             
         }
+        [_cardCollectionView reloadData];
+      
+        // 每日精选 最后 用
+//        for (NSDictionary *videoList in response[@"dailyList"]) {
+//            NSArray *temp = [videoList objectForKey:@"videoList"];
+//            
+//            for (NSDictionary *dict in temp) {
+//                VideoListModel *model = [[VideoListModel alloc]init];
+//                model.titleLabel = [NSString stringWithFormat:@"%@",dict[@"title"]];
+//                model.ImageView = [NSString stringWithFormat:@"%@",dict[@"coverForDetail"]];
+//
+//                [_dataArray addObject:model];
+//                
+//            }
+//            [_cardCollectionView reloadData];
+//            
+//        }
         
-
-        
+        [SVProgressHUD dismiss];
+        [self endRefresh];
     } fail:^(NSError *error) {
         
     }];
 }
-
-
+// load more
+- (void) loadMoreData
+{
+    if ([self.nextPage isEqualToString:@"<null>"]) {
+        [self.cardCollectionView.mj_footer endRefreshingWithNoMoreData];
+    }
+    else
+    {
+    // 显示 HUD
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+        [SVProgressHUD showWithStatus:@"数据加载中了哦..."];
+        [HYNetworking getWithUrl:self.nextPage refreshCache:YES params:nil success:^(id response) {
+            self.nextPage = [NSString stringWithFormat:@"%@",response[@"nextPageUrl"]];
+            HYLog(@"nextpage == %@",self.nextPage);
+            NSDictionary *videoListDict = [response objectForKey:@"videoList"];
+            for (NSDictionary *dict in videoListDict) {
+                VideoListModel *model = [[VideoListModel alloc] init];
+                
+                [_dataArray addObject:model];
+                model.titleLabel = [NSString stringWithFormat:@"%@",dict[@"title"]];
+                model.ImageView = [NSString stringWithFormat:@"%@",dict[@"coverForDetail"]];
+                
+            }
+            [self.cardCollectionView reloadData];
+            [SVProgressHUD dismiss];
+            [self endRefresh];
+            
+        } fail:^(NSError *error) {
+            [self endRefresh];
+            [SVProgressHUD dismiss];
+        }];
+    }
+}
 
 #pragma mark - UICollectionViewDataSource
 
@@ -130,19 +192,21 @@ static NSString *ID = @"cell";
         
     }
     
-    
     VideoListModel *model = _dataArray[indexPath.item];
     cell.titleLabel.text = model.titleLabel;
     HYLog(@"text == %@",cell.titleLabel.text);
     [cell.coverImg sd_setImageWithURL:[NSURL URLWithString:model.ImageView]];
+ 
     
     return cell;
 }
 
-
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    videoDeatilVC *detail = [[videoDeatilVC alloc] init];
+       detail.model = _dataArray[indexPath.row];
+   // [self.navigationController pushViewController:detail animated:YES];
+
     CGFloat offsetY = self.cardCollectionView.contentOffset.y;
     if ([self.cardLayout isKindOfClass:[CardLayout class]]) {
         if (!self.cardLayoutStyle2) {
@@ -157,9 +221,9 @@ static NSString *ID = @"cell";
             self.cardLayout = self.cardLayoutStyle2;
         }
         self.cardCollectionView.scrollEnabled = NO;
-        [self showMaskView]; //显示背景浮层
+        //[self showMaskView]; //显示背景浮层
         //选中的卡片不显示蒙层
-        [((CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:indexPath]) setBlur:0];
+        //[((CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:indexPath]) setBlur:0];
     }
     else
     {
@@ -174,9 +238,9 @@ static NSString *ID = @"cell";
             self.cardLayout = self.cardLayoutStyle1;
             ((CardLayout*)self.cardLayoutStyle1).delegate = self;
         }
-        self.cardCollectionView.scrollEnabled = YES;
-        [self hideMaskView];
+
     }
+   
     [self.cardCollectionView setCollectionViewLayout:self.cardLayout animated:YES];
 }
 -(void)showMaskView
@@ -197,7 +261,7 @@ static NSString *ID = @"cell";
 
 -(void)tapOnBackGround
 {
-    CGFloat offsetY = self.cardCollectionView.contentOffset.y;
+       CGFloat offsetY = self.cardCollectionView.contentOffset.y;
     if ([self.cardLayout isKindOfClass:[CardLayout class]]) {
         
     }
@@ -218,55 +282,25 @@ static NSString *ID = @"cell";
         [self.cardCollectionView removeGestureRecognizer:self.tapGesCollectionView];
     }
     [self.cardCollectionView setCollectionViewLayout:self.cardLayout animated:YES];
-    [self updateBlur];
+    
 }
 
-//-(UITapGestureRecognizer*)tapGesCollectionView
-//{
-//    if (!_tapGesCollectionView) {
-//        _tapGesCollectionView = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnBackGround)];
-//    }
-//    return _tapGesCollectionView;
-//}
+-(UITapGestureRecognizer*)tapGesCollectionView
+{
+    if (!_tapGesCollectionView) {
+        _tapGesCollectionView = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapOnBackGround)];
+    }
+    return _tapGesCollectionView;
+}
 
-//-(UICollectionView*)cardCollectionView
-//{
-//    if (!_cardCollectionView) {
-//        _cardCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0 , self.view.bounds.size.width, collectionHeight) collectionViewLayout:self.cardLayout];
-//        [_cardCollectionView registerClass:[CardCellCollectionViewCell class] forCellWithReuseIdentifier:ID];
-//        _cardCollectionView.delegate = self;
-//        _cardCollectionView.dataSource = self;
-//        [_cardCollectionView setContentOffset:CGPointMake(0, 400)];
-//        _cardCollectionView.backgroundColor = RGBColorC(0x2D3142);
-//    }
-//    return _cardCollectionView;
-//}
--(void)updateBlur
+
+
+- (void)endRefresh
 {
-    if ([self.cardLayout isKindOfClass:[CardLayout class]]) {
-        for (NSInteger row = 0; row < [self.cardCollectionView numberOfItemsInSection:0]; row++) {
-            CardCellCollectionViewCell* cell = (CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-            CGFloat blur = ((NSNumber*)[((CardLayout*)self.cardLayout).blurList objectAtIndex:row]).floatValue;
-            [cell setBlur:blur];
-        }
-    }
-    else
-    {
-        for (NSInteger row = 0; row < [self.cardCollectionView numberOfItemsInSection:0]; row++) {
-            CardCellCollectionViewCell* cell = (CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-            [cell setBlur:0];
-        }
-    }
+    [self.cardCollectionView.mj_header endRefreshing];
+    [self.cardCollectionView.mj_footer endRefreshing];
 }
-//
--(void)updateBlur:(CGFloat) blur ForRow:(NSInteger)row
-{
-    if (![self.cardLayout isKindOfClass:[CardLayout class]]) {
-        return;
-    }
-    CardCellCollectionViewCell* cell = (CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
-    [cell setBlur:blur];
-}
+
 -(NSTimeInterval)getdate{
     
     NSDate* dat = [NSDate dateWithTimeIntervalSinceNow:0];

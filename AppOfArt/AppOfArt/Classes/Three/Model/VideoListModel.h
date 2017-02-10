@@ -31,6 +31,6 @@
 
 @property (nonatomic, copy) NSString *idStr;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDic:(NSDictionary *)dic;
 
 @end

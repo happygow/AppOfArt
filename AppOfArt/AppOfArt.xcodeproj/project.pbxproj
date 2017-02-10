@@ -39,6 +39,7 @@
 		051DEDD01E48789100867766 /* XHLaunchAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED881E48789100867766 /* XHLaunchAd.m */; };
 		051DEDD11E48789100867766 /* XHWebImageDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 051DED8A1E48789100867766 /* XHWebImageDownload.m */; };
 		05303B701E4AB054008628F7 /* HYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 05303B6F1E4AB054008628F7 /* HYNetworking.m */; };
+		0550E1211E4B2142009E3D2C /* videoDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0550E1201E4B2142009E3D2C /* videoDeatilVC.m */; };
 		1BD1AE4827E5505223A3E269 /* libPods-AppOfArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,8 @@
 		051DED8A1E48789100867766 /* XHWebImageDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageDownload.m; sourceTree = "<group>"; };
 		05303B6E1E4AB054008628F7 /* HYNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNetworking.h; sourceTree = "<group>"; };
 		05303B6F1E4AB054008628F7 /* HYNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNetworking.m; sourceTree = "<group>"; };
+		0550E11F1E4B2142009E3D2C /* videoDeatilVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = videoDeatilVC.h; path = ../View/videoDeatilVC.h; sourceTree = "<group>"; };
+		0550E1201E4B2142009E3D2C /* videoDeatilVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = videoDeatilVC.m; path = ../View/videoDeatilVC.m; sourceTree = "<group>"; };
 		3205E0DB27A5B75F1006253B /* Pods-AppOfArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.debug.xcconfig"; sourceTree = "<group>"; };
 		B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppOfArt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6EA75BED79BC216CBF92B0 /* Pods-AppOfArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.release.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +266,8 @@
 			children = (
 				051DECB41E4869AD00867766 /* HYThreeVC.h */,
 				051DECB51E4869AD00867766 /* HYThreeVC.m */,
+				0550E11F1E4B2142009E3D2C /* videoDeatilVC.h */,
+				0550E1201E4B2142009E3D2C /* videoDeatilVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -584,6 +589,7 @@
 				051DECD61E4869AD00867766 /* CustomNavigationController.m in Sources */,
 				051DECD31E4869AD00867766 /* HYOneVC.m in Sources */,
 				051DECDC1E4869AD00867766 /* UIView+HYExtension.m in Sources */,
+				0550E1211E4B2142009E3D2C /* videoDeatilVC.m in Sources */,
 				051DEDCE1E48789100867766 /* UIImageView+XHWebCache.m in Sources */,
 				051DECE41E486D6C00867766 /* CardLayout.m in Sources */,
 			);
