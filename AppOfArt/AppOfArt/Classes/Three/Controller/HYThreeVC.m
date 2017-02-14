@@ -41,6 +41,18 @@ static NSString *ID = @"cell";
 
 @implementation HYThreeVC
 
+- (BOOL)shouldAutorotate//是否支持旋转屏幕
+{
+    return NO;
+}
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations//支持哪些方向
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation//默认显示的方向
+{
+    return UIInterfaceOrientationPortrait;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 去除导航栏
@@ -109,9 +121,12 @@ static NSString *ID = @"cell";
             VideoListModel *model = [[VideoListModel alloc] init];
             [_dataArray addObject:model];
             
-            model.titleLabel = [NSString stringWithFormat:@"%@",dic[@"title"]];
+            model.videoTitle = [NSString stringWithFormat:@"%@",dic[@"title"]];
             model.ImageView = [NSString stringWithFormat:@"%@",dic[@"coverForDetail"]];
-            
+            model.alphaCoverImg = [NSString stringWithFormat:@"%@",dic[@"coverBlurred"]];
+            model.duration = [NSString stringWithFormat:@"%@",dic[@"duration"]];
+            model.videoDescription = [NSString stringWithFormat:@"%@",dic[@"description"]];
+            model.playUrl = [NSString stringWithFormat:@"%@",dic[@"playUrl"]];
         }
         [_cardCollectionView reloadData];
       
@@ -156,8 +171,14 @@ static NSString *ID = @"cell";
                 VideoListModel *model = [[VideoListModel alloc] init];
                 
                 [_dataArray addObject:model];
-                model.titleLabel = [NSString stringWithFormat:@"%@",dict[@"title"]];
+                model.videoTitle = [NSString stringWithFormat:@"%@",dict[@"title"]];
                 model.ImageView = [NSString stringWithFormat:@"%@",dict[@"coverForDetail"]];
+                model.alphaCoverImg = [NSString stringWithFormat:@"%@",dict[@"coverBlurred"]];
+                model.duration = [NSString stringWithFormat:@"%@",dict[@"duration"]];
+                model.videoDescription = [NSString stringWithFormat:@"%@",dict[@"description"]];
+                model.playUrl = [NSString stringWithFormat:@"%@",dict[@"playUrl"]];
+//                model.alphaCoverImg = [NSString stringWithFormat:@"%@",dict[@""]];
+//                model.alphaCoverImg = [NSString stringWithFormat:@"%@",dict[@""]];
                 
             }
             [self.cardCollectionView reloadData];
@@ -193,7 +214,8 @@ static NSString *ID = @"cell";
     }
     
     VideoListModel *model = _dataArray[indexPath.item];
-    cell.titleLabel.text = model.titleLabel;
+    cell.titleLabel.text = model.videoTitle;
+    
     HYLog(@"text == %@",cell.titleLabel.text);
     [cell.coverImg sd_setImageWithURL:[NSURL URLWithString:model.ImageView]];
  
@@ -204,50 +226,53 @@ static NSString *ID = @"cell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     videoDeatilVC *detail = [[videoDeatilVC alloc] init];
-       detail.model = _dataArray[indexPath.row];
-   // [self.navigationController pushViewController:detail animated:YES];
+    detail.model = _dataArray[indexPath.row];
+    
+    [self.navigationController pushViewController:detail animated:YES];
 
-    CGFloat offsetY = self.cardCollectionView.contentOffset.y;
-    if ([self.cardLayout isKindOfClass:[CardLayout class]]) {
-        if (!self.cardLayoutStyle2) {
-            self.cardLayoutStyle2 =  [[CardSelectedLayout alloc]initWithIndexPath:indexPath offsetY:offsetY ContentSizeHeight:((CardLayout*)self.cardLayout).contentSizeHeight];
-            self.cardLayout = self.cardLayoutStyle2;
-        }
-        else
-        {
-            ((CardSelectedLayout*)self.cardLayoutStyle2).contentOffsetY = offsetY;
-            ((CardSelectedLayout*)self.cardLayoutStyle2).contentSizeHeight = ((CardLayout*)self.cardLayout).contentSizeHeight;
-            ((CardSelectedLayout*)self.cardLayoutStyle2).selectedIndexPath = indexPath;
-            self.cardLayout = self.cardLayoutStyle2;
-        }
-        self.cardCollectionView.scrollEnabled = NO;
-        //[self showMaskView]; //显示背景浮层
-        //选中的卡片不显示蒙层
-        //[((CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:indexPath]) setBlur:0];
-    }
-    else
-    {
-        if (!self.cardLayoutStyle1) {
-            self.cardLayoutStyle1 =  [[CardLayout alloc]initWithOffsetY:offsetY];
-            self.cardLayout = self.cardLayoutStyle1;
-            ((CardLayout*)self.cardLayoutStyle1).delegate = self;
-        }
-        else
-        {
-            ((CardLayout*)self.cardLayoutStyle1).offsetY = offsetY;
-            self.cardLayout = self.cardLayoutStyle1;
-            ((CardLayout*)self.cardLayoutStyle1).delegate = self;
-        }
-
-    }
-   
-    [self.cardCollectionView setCollectionViewLayout:self.cardLayout animated:YES];
+//    CGFloat offsetY = self.cardCollectionView.contentOffset.y;
+//    if ([self.cardLayout isKindOfClass:[CardLayout class]]) {
+//        if (!self.cardLayoutStyle2) {
+//            self.cardLayoutStyle2 =  [[CardSelectedLayout alloc]initWithIndexPath:indexPath offsetY:offsetY ContentSizeHeight:((CardLayout*)self.cardLayout).contentSizeHeight];
+//            self.cardLayout = self.cardLayoutStyle2;
+//        }
+//        else
+//        {
+//            ((CardSelectedLayout*)self.cardLayoutStyle2).contentOffsetY = offsetY;
+//            ((CardSelectedLayout*)self.cardLayoutStyle2).contentSizeHeight = ((CardLayout*)self.cardLayout).contentSizeHeight;
+//            ((CardSelectedLayout*)self.cardLayoutStyle2).selectedIndexPath = indexPath;
+//            self.cardLayout = self.cardLayoutStyle2;
+//        }
+//        self.cardCollectionView.scrollEnabled = NO;
+//        [self showMaskView]; //显示背景浮层
+//        //选中的卡片不显示蒙层
+//        //[((CardCellCollectionViewCell*)[self.cardCollectionView cellForItemAtIndexPath:indexPath]) setBlur:0];
+//    }
+//    else
+//    {
+//        if (!self.cardLayoutStyle1) {
+//            self.cardLayoutStyle1 =  [[CardLayout alloc]initWithOffsetY:offsetY];
+//            self.cardLayout = self.cardLayoutStyle1;
+//            ((CardLayout*)self.cardLayoutStyle1).delegate = self;
+//        }
+//        else
+//        {
+//            ((CardLayout*)self.cardLayoutStyle1).offsetY = offsetY;
+//            self.cardLayout = self.cardLayoutStyle1;
+//            ((CardLayout*)self.cardLayoutStyle1).delegate = self;
+//        }
+//        self.cardCollectionView.scrollEnabled = YES;
+//        [self hideMaskView];
+//
+//    }
+//   
+//    [self.cardCollectionView setCollectionViewLayout:self.cardLayout animated:YES];
 }
 -(void)showMaskView
 {
     //    CATransform3DMakeTranslation(0, 0, -10);
-    //    self.maskView.hidden = NO;
-    self.cardCollectionView.backgroundColor = RGBColorC(0x161821);
+    //    self.maskView.hidden = NO;RGBColorC(0x161821)
+    self.cardCollectionView.backgroundColor = [UIColor redColor];
     //    self.closeIconView.hidden = NO;
     [self.cardCollectionView addGestureRecognizer:self.tapGesCollectionView];
 }

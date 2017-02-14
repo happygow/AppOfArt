@@ -10,5 +10,9 @@
 #import "VideoListModel.h"
 
 @interface videoDeatilVC : UIViewController
+
+
+
 @property (nonatomic, strong)VideoListModel  *model;
+
 @end

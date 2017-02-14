@@ -65,7 +65,7 @@ static int cellCount;
 {
     _model = model;
     
-    self.titleLabel.text = model.titleLabel;
+    self.titleLabel.text = model.videoTitle;
     [self.titleLabel sizeToFit];
     [self setNeedsLayout];
     [self.coverImg sd_setImageWithURL:[NSURL URLWithString:model.ImageView]];

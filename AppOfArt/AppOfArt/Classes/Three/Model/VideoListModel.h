@@ -12,16 +12,16 @@
 /** 图片 */
 @property (nonatomic, copy) NSString *ImageView;
 
-@property (nonatomic, copy) NSString *shadeView;
+@property (nonatomic, copy) NSString *alphaCoverImg;
 
 /** 标题 */
-@property (nonatomic, copy) NSString *titleLabel;
+@property (nonatomic, copy) NSString *videoTitle;
 
 @property (nonatomic, copy) NSString *category;
 
 @property (nonatomic, copy) NSString *duration;
 
-@property (nonatomic, copy) NSString *desc;
+@property (nonatomic, copy) NSString *videoDescription;
 
 @property (nonatomic, copy) NSDictionary *consumption;
 
