@@ -53,6 +53,10 @@ static NSString *ID = @"cell";
 {
     return UIInterfaceOrientationPortrait;
 }
+- (void)viewWillAppear:(BOOL)animated
+{
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // 去除导航栏
@@ -228,7 +232,7 @@ static NSString *ID = @"cell";
     videoDeatilVC *detail = [[videoDeatilVC alloc] init];
     detail.model = _dataArray[indexPath.row];
     
-    [self.navigationController pushViewController:detail animated:YES];
+    [self.navigationController presentViewController:detail animated:YES completion:nil];
 
 //    CGFloat offsetY = self.cardCollectionView.contentOffset.y;
 //    if ([self.cardLayout isKindOfClass:[CardLayout class]]) {

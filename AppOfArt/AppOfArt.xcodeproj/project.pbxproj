@@ -40,6 +40,7 @@
 		05303B701E4AB054008628F7 /* HYNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 05303B6F1E4AB054008628F7 /* HYNetworking.m */; };
 		0550E1211E4B2142009E3D2C /* videoDeatilVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0550E1201E4B2142009E3D2C /* videoDeatilVC.m */; };
 		05999F4B1E52FC4700480B84 /* HYNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05999F4A1E52FC4700480B84 /* HYNavigationVC.m */; };
+		05999F4E1E5405F900480B84 /* onetextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05999F4D1E5405F900480B84 /* onetextViewController.m */; };
 		05FDD09E1E52A39D00418497 /* HYTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FDD09D1E52A39D00418497 /* HYTime.m */; };
 		05FDD0A11E52B06B00418497 /* HYVideoPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FDD0A01E52B06B00418497 /* HYVideoPlayVC.m */; };
 		1BD1AE4827E5505223A3E269 /* libPods-AppOfArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */; };
@@ -70,8 +71,8 @@
 		051DECC61E4869AD00867766 /* HYtabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYtabBar.m; sourceTree = "<group>"; };
 		051DECC71E4869AD00867766 /* HYtabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYtabBarVC.h; sourceTree = "<group>"; };
 		051DECC81E4869AD00867766 /* HYtabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYtabBarVC.m; sourceTree = "<group>"; };
-		051DECC91E4869AD00867766 /* HYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYViewController.h; sourceTree = "<group>"; };
-		051DECCA1E4869AD00867766 /* HYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYViewController.m; sourceTree = "<group>"; };
+		051DECC91E4869AD00867766 /* HYViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HYViewController.h; path = Controller/HYViewController.h; sourceTree = "<group>"; };
+		051DECCA1E4869AD00867766 /* HYViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HYViewController.m; path = Controller/HYViewController.m; sourceTree = "<group>"; };
 		051DECCC1E4869AD00867766 /* UIBarButtonItem+HYExtenssion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HYExtenssion.h"; sourceTree = "<group>"; };
 		051DECCD1E4869AD00867766 /* UIBarButtonItem+HYExtenssion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HYExtenssion.m"; sourceTree = "<group>"; };
 		051DECCE1E4869AD00867766 /* UIView+HYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HYExtension.h"; sourceTree = "<group>"; };
@@ -114,6 +115,8 @@
 		0550E1201E4B2142009E3D2C /* videoDeatilVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = videoDeatilVC.m; path = ../View/videoDeatilVC.m; sourceTree = "<group>"; };
 		05999F491E52FC4700480B84 /* HYNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNavigationVC.h; sourceTree = "<group>"; };
 		05999F4A1E52FC4700480B84 /* HYNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNavigationVC.m; sourceTree = "<group>"; };
+		05999F4C1E5405F900480B84 /* onetextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = onetextViewController.h; sourceTree = "<group>"; };
+		05999F4D1E5405F900480B84 /* onetextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = onetextViewController.m; sourceTree = "<group>"; };
 		05FDD09C1E52A39D00418497 /* HYTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTime.h; sourceTree = "<group>"; };
 		05FDD09D1E52A39D00418497 /* HYTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTime.m; sourceTree = "<group>"; };
 		05FDD09F1E52B06B00418497 /* HYVideoPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYVideoPlayVC.h; sourceTree = "<group>"; };
@@ -237,6 +240,8 @@
 			children = (
 				051DECAE1E4869AD00867766 /* HYOneVC.h */,
 				051DECAF1E4869AD00867766 /* HYOneVC.m */,
+				05999F4C1E5405F900480B84 /* onetextViewController.h */,
+				05999F4D1E5405F900480B84 /* onetextViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -342,6 +347,8 @@
 				05303B6E1E4AB054008628F7 /* HYNetworking.h */,
 				05303B6F1E4AB054008628F7 /* HYNetworking.m */,
 				051DECD11E4869AD00867766 /* PrefixHeader.pch */,
+				051DECC91E4869AD00867766 /* HYViewController.h */,
+				051DECCA1E4869AD00867766 /* HYViewController.m */,
 			);
 			path = other;
 			sourceTree = "<group>";
@@ -354,8 +361,6 @@
 				051DECC61E4869AD00867766 /* HYtabBar.m */,
 				051DECC71E4869AD00867766 /* HYtabBarVC.h */,
 				051DECC81E4869AD00867766 /* HYtabBarVC.m */,
-				051DECC91E4869AD00867766 /* HYViewController.h */,
-				051DECCA1E4869AD00867766 /* HYViewController.m */,
 				05999F491E52FC4700480B84 /* HYNavigationVC.h */,
 				05999F4A1E52FC4700480B84 /* HYNavigationVC.m */,
 			);
@@ -593,6 +598,7 @@
 				051DEDA21E48789100867766 /* UIColor+FlatColors.m in Sources */,
 				051DEC901E48697E00867766 /* main.m in Sources */,
 				051DECD81E4869AD00867766 /* HYtabBar.m in Sources */,
+				05999F4E1E5405F900480B84 /* onetextViewController.m in Sources */,
 				05999F4B1E52FC4700480B84 /* HYNavigationVC.m in Sources */,
 				051DECE51E486D6C00867766 /* CardSelectedLayout.m in Sources */,
 				051DECE81E4870CD00867766 /* VideoListModel.m in Sources */,
@@ -728,6 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYUUR96E57;
 				INFOPLIST_FILE = AppOfArt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OneMeter.AppOfArt.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -741,6 +748,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DYUUR96E57;
 				INFOPLIST_FILE = AppOfArt/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = OneMeter.AppOfArt.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";

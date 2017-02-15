@@ -186,7 +186,7 @@
     _backButton.frame = CGRectMake(20, 0, 350,50);
     [_backButton addTarget:self action:@selector(BackButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
     [_ControlView addSubview:_backButton];
-    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"btn_back_normal@2x"]];
+    UIImageView *image = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"navigationButtonReturn"]];
     image.frame = CGRectMake(0, 10, 20, 20);
     [_backButton addSubview:image];
     

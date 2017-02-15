@@ -56,6 +56,21 @@
     [item setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [item setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 }
+//||[self isKindOfClass:[FiveViewController class]]
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+        if ([self isKindOfClass:[HYOneVC class]]||[self isKindOfClass:[HYTwoVC class]]||[self isKindOfClass:[HYThreeVC class]]||[self isKindOfClass:[HYFourVC class]]) {
+            self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+            
+        }
+        else
+        {
+            self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        }
+   
+
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -160,6 +175,8 @@
     // 包装一个导航控制器, 添加导航控制器为tabbarcontroller的子控制器
     HYNavigationVC *nav = [[HYNavigationVC alloc] initWithRootViewController:vc];
     [self addChildViewController:nav];
+//    //获取导航条最高权限
+    //[[UITabBarItem appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
 }
 
 // 封装

@@ -250,7 +250,6 @@ typedef void(^HYResponseFail)(NSError *error);
  *	@param success		上传成功回调
  *	@param fail				上传失败回调
  *
- *	@return
  */
 + (HYURLSessionTask *)uploadWithImage:(UIImage *)image
                                    url:(NSString *)url

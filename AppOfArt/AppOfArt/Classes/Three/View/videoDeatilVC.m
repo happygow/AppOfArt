@@ -41,15 +41,33 @@
 }
 
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor grayColor];
-    //self.navigationController.navigationBar.hidden = YES;
-    // Do any additional setup after loading the view.
-    //self.navigationController.navigationBar.hidden = YES;
+    //解决 系统自带的侧滑失效问题
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    self.navigationController.navigationBar.hidden = NO;
+    
     [self createView];
     
+    
+    // 向下滑动 返回
+    UISwipeGestureRecognizer *recognizerBack = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipBack:)];
+    [recognizerBack setDirection:(UISwipeGestureRecognizerDirectionDown)];
+    [[self view ]addGestureRecognizer:recognizerBack];
+    
 }
+
+- (void)swipBack:(UISwipeGestureRecognizer *)recognizer
+{
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionDown) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+
 // 页面布局
 - (void)createView
 {
@@ -62,13 +80,12 @@
     
     // 2. 添加个button
     _playBtn = [[UIButton alloc] initWithFrame:CGRectMake(_coverImageView.width / 2 - playBtnW / 2  , _coverImageView.width / 2 - playBtnW * 1.6, playBtnW, playBtnW)];
-    [_playBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
- 
-    
-    [self.coverImageView addSubview:_playBtn];
+   
+     [_playBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+     [self.coverImageView addSubview:_playBtn];
     
     // play action
-    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, _coverImageView.width, _coverImageView.height)];
+    UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(_coverImageView.width / 2 - playBtnW / 2  , _coverImageView.width / 2 - playBtnW * 1.6, playBtnW, playBtnW)];
     btn.backgroundColor = [UIColor clearColor];
     [btn addTarget:self action:@selector(playVideo) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
@@ -123,6 +140,22 @@
      [_alphaCoverImg addSubview:_videoDescription];
     
     
+    
+    // back btn
+    UIButton *backBtn = [[UIButton alloc] initWithFrame:CGRectMake(HYValue(10), HYValue(30), HYValue(25), HYValue(25))];
+    backBtn.backgroundColor = [UIColor lightGrayColor];
+    backBtn.layer.cornerRadius = 15;
+    backBtn.layer.masksToBounds = YES;
+    [backBtn setImage:[UIImage imageNamed:@"navigationButtonReturn"] forState:UIControlStateNormal];
+    [_coverImageView addSubview:backBtn];
+    
+    UIButton *btnClicked = [[UIButton alloc] initWithFrame:CGRectMake(5, HYValue(20), HYValue(30), HYValue(30))];
+    //btnClicked .backgroundColor = [UIColor yellowColor];
+    [btnClicked addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btnClicked];
+    
+    
+    
 }
 
 
@@ -134,6 +167,15 @@
     videoplay.duration = [self.model.duration floatValue];
     [self showDetailViewController:videoplay sender:nil];
 }
+
+- (void)goBack
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
