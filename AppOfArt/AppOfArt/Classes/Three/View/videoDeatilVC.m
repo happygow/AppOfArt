@@ -80,7 +80,6 @@
     
     // 2. 添加个button
     _playBtn = [[UIButton alloc] initWithFrame:CGRectMake(_coverImageView.width / 2 - playBtnW / 2  , _coverImageView.width / 2 - playBtnW * 1.6, playBtnW, playBtnW)];
-   
      [_playBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
      [self.coverImageView addSubview:_playBtn];
     
@@ -108,7 +107,6 @@
     _timeDuration = [[UILabel alloc] initWithFrame:CGRectMake(_videoTitle.x, _videoTitle.bottom + HYValue(10), _videoTitle.width, HYValue(15))];
     [_timeDuration setTextColor:[UIColor whiteColor]];
     [_timeDuration setFont:[UIFont systemFontOfSize:14]];
-    
     _timeDuration.text = [NSString stringWithFormat:@"时长 : %@",[HYTime timeStrFormTime:self.model.duration]] ;
     [_alphaCoverImg addSubview:_timeDuration];
     
@@ -136,8 +134,7 @@
     [pagestyle setLineSpacing:7];
     [attributedString addAttribute:NSParagraphStyleAttributeName value:pagestyle range:NSMakeRange(0, [self.model.videoDescription length])] ;
     [_videoDescription setAttributedText:attributedString];
-    
-     [_alphaCoverImg addSubview:_videoDescription];
+    [_alphaCoverImg addSubview:_videoDescription];
     
     
     
@@ -150,7 +147,6 @@
     [_coverImageView addSubview:backBtn];
     
     UIButton *btnClicked = [[UIButton alloc] initWithFrame:CGRectMake(5, HYValue(20), HYValue(30), HYValue(30))];
-    //btnClicked .backgroundColor = [UIColor yellowColor];
     [btnClicked addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnClicked];
     
