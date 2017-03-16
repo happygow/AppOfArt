@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface onetextViewController : UIViewController
-
+// uivi
+@property (nonatomic , strong) UIView *view;
 @end
