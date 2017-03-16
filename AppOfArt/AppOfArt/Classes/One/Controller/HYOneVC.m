@@ -75,15 +75,6 @@ static NSString *ID = @"cell";
 
     self.view.backgroundColor = [UIColor whiteColor];
 //    self.navigationController.navigationBar.hidden = YES;
-    [self createView];
-    
-}
-
-- (void)createView
-{
-
-    
-    
     
 }
 
