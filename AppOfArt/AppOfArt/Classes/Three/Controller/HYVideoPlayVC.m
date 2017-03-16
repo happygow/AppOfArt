@@ -116,8 +116,8 @@
     AVPlayerItem *item = [AVPlayerItem playerItemWithAsset:asset];
     _player = [AVPlayer playerWithPlayerItem:item];
     _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
-    _playerLayer.frame = CGRectMake(0, 0, ScreenHeight, ScreenWidth);
-    _shadeView.frame = CGRectMake(0, 0, ScreenHeight, ScreenWidth);
+    _playerLayer.frame = CGRectMake(0, 0, HYScreenHeight, HYScreenWidth);
+    _shadeView.frame = CGRectMake(0, 0, HYScreenHeight, HYScreenWidth);
     _playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [self.movieView.layer addSublayer:_playerLayer];
     [_player.currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:nil];//监听属性
@@ -150,7 +150,7 @@
     
     _ControlView = [[UIView alloc]init];
     _player.volume = 2;
-    _ControlView.frame = CGRectMake(0, 0, ScreenHeight, ScreenWidth);
+    _ControlView.frame = CGRectMake(0, 0, HYScreenHeight, HYScreenWidth);
     [self.view addSubview:_ControlView];
     
     // 播放进度条
@@ -248,7 +248,7 @@
     // 暂停button
     _pauseButton = [[UIButton alloc] init];
     [_pauseButton setImage:[UIImage imageNamed:@"btn_pause@2x"] forState:UIControlStateNormal];
-    _pauseButton.frame = CGRectMake(ScreenHeight/2-22, ScreenWidth/2-22, 44, 44);
+    _pauseButton.frame = CGRectMake(HYScreenHeight/2-22, HYScreenWidth/2-22, 44, 44);
     [_pauseButton addTarget:self action:@selector(pauseButtonDidClicked:) forControlEvents:UIControlEventTouchUpInside];
     [_ControlView addSubview:_pauseButton];
     

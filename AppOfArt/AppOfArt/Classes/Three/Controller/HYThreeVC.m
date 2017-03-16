@@ -124,6 +124,7 @@ static NSString *ID = @"cell";
         for (NSDictionary *dic  in videoListDict) {
             VideoListModel *model = [[VideoListModel alloc] init];
             [_dataArray addObject:model];
+            HYLog(@"count1 ==  %ld",_dataArray.count );
             
             model.videoTitle = [NSString stringWithFormat:@"%@",dic[@"title"]];
             model.ImageView = [NSString stringWithFormat:@"%@",dic[@"coverForDetail"]];
@@ -134,22 +135,6 @@ static NSString *ID = @"cell";
         }
         [_cardCollectionView reloadData];
       
-        // 每日精选 最后 用
-//        for (NSDictionary *videoList in response[@"dailyList"]) {
-//            NSArray *temp = [videoList objectForKey:@"videoList"];
-//            
-//            for (NSDictionary *dict in temp) {
-//                VideoListModel *model = [[VideoListModel alloc]init];
-//                model.titleLabel = [NSString stringWithFormat:@"%@",dict[@"title"]];
-//                model.ImageView = [NSString stringWithFormat:@"%@",dict[@"coverForDetail"]];
-//
-//                [_dataArray addObject:model];
-//                
-//            }
-//            [_cardCollectionView reloadData];
-//            
-//        }
-        
         [SVProgressHUD dismiss];
         [self endRefresh];
     } fail:^(NSError *error) {
@@ -205,6 +190,7 @@ static NSString *ID = @"cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    HYLog(@"count1 ==  %ld",_dataArray.count );
     return _dataArray.count;
 }
 
