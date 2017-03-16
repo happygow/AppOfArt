@@ -802,7 +802,7 @@
 				INFOPLIST_FILE = AppOfArt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = OneMeter.AppOfArt.com;
+				PRODUCT_BUNDLE_IDENTIFIER = zhang.AppOfArt.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -816,7 +816,7 @@
 				INFOPLIST_FILE = AppOfArt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = OneMeter.AppOfArt.com;
+				PRODUCT_BUNDLE_IDENTIFIER = zhang.AppOfArt.com;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
