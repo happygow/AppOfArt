@@ -8,7 +8,7 @@
 
 #import "HYtabBarVC.h"
 #import "HYoneVC.h"
-#import "HYtwoVC.h"
+#import "HYTwoVCTableViewController.h"
 #import "HYthreeVC.h"
 #import "HYfourVC.h"
 #import "HYtabBar.h"
@@ -60,7 +60,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     
-        if ([self isKindOfClass:[HYOneVC class]]||[self isKindOfClass:[HYTwoVC class]]||[self isKindOfClass:[HYThreeVC class]]||[self isKindOfClass:[HYFourVC class]]) {
+        if ([self isKindOfClass:[HYOneVC class]]||[self isKindOfClass:[HYTwoVCTableViewController class]]||[self isKindOfClass:[HYThreeVC class]]||[self isKindOfClass:[HYFourVC class]]) {
             self.navigationController.interactivePopGestureRecognizer.enabled = NO;
             
         }
@@ -96,7 +96,7 @@
     
     [self setupChildVc:[[HYOneVC alloc] init] title:@"one" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
-    [self setupChildVc:[[HYTwoVC alloc] init] title:@"two" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
+    [self setupChildVc:[[HYTwoVCTableViewController alloc] init] title:@"two" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
     [self setupChildVc:[[HYThreeVC alloc] init] title:@"three" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
     
@@ -167,7 +167,7 @@
 - (void)setupChildVc:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     // 设置文字和图片
-    vc.navigationItem.title = title;
+//    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];

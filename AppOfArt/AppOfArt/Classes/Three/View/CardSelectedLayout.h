@@ -1,9 +1,9 @@
 //
 //  CardSelectedLayout.h
-//  DDCardAnimation
+//  AppOfArt
 //
-//  Created by tondyzhang on 16/10/11.
-//  Copyright © 2016年 tondy. All rights reserved.
+//  Created by LeeBruce on 17/2/6.
+//  Copyright © 2017年 zhang. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

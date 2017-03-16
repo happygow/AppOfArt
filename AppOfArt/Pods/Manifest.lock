@@ -14,7 +14,12 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - JZNavigationExtension (1.5.0.1)
+  - Masonry (1.0.2)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
@@ -22,16 +27,24 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - JZNavigationExtension
+  - Masonry
+  - MJExtension
   - MJRefresh
+  - SDCycleScrollView
   - SDWebImage
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  JZNavigationExtension: 7b95d2b1c48846b8bedcb40d767448f14cb9a0b7
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: d4d76de5e040d3e598e2f838adff7554ca59c898
+PODFILE CHECKSUM: a3568879774627120bc2ead8f50c3c37b55179c3
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

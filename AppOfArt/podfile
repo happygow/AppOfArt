@@ -4,4 +4,7 @@ pod 'AFNetworking'
 pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'MJRefresh'
-
+pod 'SDCycleScrollView'
+pod 'MJExtension'
+pod 'JZNavigationExtension'
+pod 'Masonry'

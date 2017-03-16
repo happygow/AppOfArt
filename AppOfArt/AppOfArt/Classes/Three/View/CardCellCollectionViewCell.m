@@ -1,9 +1,9 @@
 //
 //  CardCellCollectionViewCell.m
-//  DDCardAnimation
+//  AppOfArt
 //
-//  Created by tondyzhang on 16/10/11.
-//  Copyright © 2016年 tondy. All rights reserved.
+//  Created by LeeBruce on 17/2/6.
+//  Copyright © 2017年 zhang. All rights reserved.
 //
 
 #import "CardCellCollectionViewCell.h"
@@ -34,7 +34,7 @@ static int cellCount;
         self.coverImg.backgroundColor = [UIColor yellowColor];
         [self.contentView addSubview:self.coverImg];
         
-        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, width, 30)];
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 60, width, 30)];
  
         self.titleLabel.textColor = [UIColor whiteColor];
         self.titleLabel.font = [UIFont systemFontOfSize:15];

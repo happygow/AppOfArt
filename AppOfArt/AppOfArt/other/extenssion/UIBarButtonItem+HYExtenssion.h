@@ -10,4 +10,17 @@
 
 @interface UIBarButtonItem (HYExtenssion)
 + (instancetype)itemWithImage:(NSString *)image highImage:(NSString *)highIamge target:(id)target action:(SEL)action;
+
+/**
+ *  通过字体来设置button的frame
+ *
+ *  @param width    宽
+ *  @param fontSize 字体大小
+ *  @param str      title
+ *
+ */
++(CGSize)sizeOfLabelWithCustomMaxWidth:(CGFloat)width FontSize:(CGFloat)fontSize FilledTextString:(NSString *)str;
+
+
+
 @end
