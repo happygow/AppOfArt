@@ -95,10 +95,10 @@
 		05B849581E7A2B74003870BD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8494F1E7A2B74003870BD /* FMDatabaseQueue.m */; };
 		05B849591E7A2B74003870BD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B849521E7A2B74003870BD /* FMResultSet.m */; };
 		05B8495B1E7A2D60003870BD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B8495A1E7A2D60003870BD /* libsqlite3.tbd */; };
-		05B849661E7A2E80003870BD /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8495D1E7A2E80003870BD /* Factory.m */; };
-		05B849671E7A2E80003870BD /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8495F1E7A2E80003870BD /* HelpViewController.m */; };
-		05B849681E7A2E80003870BD /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B849621E7A2E80003870BD /* UIColor+FlatColors.m */; };
-		05B849691E7A2E80003870BD /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B849641E7A2E80003870BD /* UIView+Addition.m */; };
+		05B8498E1E7A3ECF003870BD /* Factory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B849861E7A3ECF003870BD /* Factory.m */; };
+		05B8498F1E7A3ECF003870BD /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B849881E7A3ECF003870BD /* HelpViewController.m */; };
+		05B849901E7A3ECF003870BD /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8498B1E7A3ECF003870BD /* UIColor+FlatColors.m */; };
+		05B849911E7A3ECF003870BD /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B8498D1E7A3ECF003870BD /* UIView+Addition.m */; };
 		1BD1AE4827E5505223A3E269 /* libPods-AppOfArt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */; };
 /* End PBXBuildFile section */
 
@@ -236,15 +236,15 @@
 		05B849511E7A2B74003870BD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		05B849521E7A2B74003870BD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		05B8495A1E7A2D60003870BD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		05B8495C1E7A2E80003870BD /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
-		05B8495D1E7A2E80003870BD /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
-		05B8495E1E7A2E80003870BD /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
-		05B8495F1E7A2E80003870BD /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
-		05B849601E7A2E80003870BD /* MyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHelper.h; sourceTree = "<group>"; };
-		05B849611E7A2E80003870BD /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
-		05B849621E7A2E80003870BD /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
-		05B849631E7A2E80003870BD /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
-		05B849641E7A2E80003870BD /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		05B849851E7A3ECF003870BD /* Factory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Factory.h; sourceTree = "<group>"; };
+		05B849861E7A3ECF003870BD /* Factory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Factory.m; sourceTree = "<group>"; };
+		05B849871E7A3ECF003870BD /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		05B849881E7A3ECF003870BD /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
+		05B849891E7A3ECF003870BD /* MyHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyHelper.h; sourceTree = "<group>"; };
+		05B8498A1E7A3ECF003870BD /* UIColor+FlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors.h"; sourceTree = "<group>"; };
+		05B8498B1E7A3ECF003870BD /* UIColor+FlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		05B8498C1E7A3ECF003870BD /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		05B8498D1E7A3ECF003870BD /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		3205E0DB27A5B75F1006253B /* Pods-AppOfArt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.debug.xcconfig"; sourceTree = "<group>"; };
 		B5C5553C0F8FF79F56321FAE /* libPods-AppOfArt.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppOfArt.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC6EA75BED79BC216CBF92B0 /* Pods-AppOfArt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppOfArt.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppOfArt/Pods-AppOfArt.release.xcconfig"; sourceTree = "<group>"; };
@@ -550,7 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				05B849421E7A2B74003870BD /* DBModel */,
-				05B849651E7A2E80003870BD /* Helper */,
+				05B849841E7A3ECF003870BD /* Helper */,
 				05B849471E7A2B74003870BD /* FMDB */,
 			);
 			path = lib;
@@ -644,21 +644,21 @@
 			path = FMDB;
 			sourceTree = "<group>";
 		};
-		05B849651E7A2E80003870BD /* Helper */ = {
+		05B849841E7A3ECF003870BD /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				05B8495C1E7A2E80003870BD /* Factory.h */,
-				05B8495D1E7A2E80003870BD /* Factory.m */,
-				05B8495E1E7A2E80003870BD /* HelpViewController.h */,
-				05B8495F1E7A2E80003870BD /* HelpViewController.m */,
-				05B849601E7A2E80003870BD /* MyHelper.h */,
-				05B849611E7A2E80003870BD /* UIColor+FlatColors.h */,
-				05B849621E7A2E80003870BD /* UIColor+FlatColors.m */,
-				05B849631E7A2E80003870BD /* UIView+Addition.h */,
-				05B849641E7A2E80003870BD /* UIView+Addition.m */,
+				05B849851E7A3ECF003870BD /* Factory.h */,
+				05B849861E7A3ECF003870BD /* Factory.m */,
+				05B849871E7A3ECF003870BD /* HelpViewController.h */,
+				05B849881E7A3ECF003870BD /* HelpViewController.m */,
+				05B849891E7A3ECF003870BD /* MyHelper.h */,
+				05B8498A1E7A3ECF003870BD /* UIColor+FlatColors.h */,
+				05B8498B1E7A3ECF003870BD /* UIColor+FlatColors.m */,
+				05B8498C1E7A3ECF003870BD /* UIView+Addition.h */,
+				05B8498D1E7A3ECF003870BD /* UIView+Addition.m */,
 			);
 			name = Helper;
-			path = "../../../../final/AppOfArt 2/AppOfArt/AppOfArt/Classes/lib/Helper";
+			path = FMDB/Helper;
 			sourceTree = "<group>";
 		};
 		161B777E1FF884B18926DDDC /* Pods */ = {
@@ -911,7 +911,7 @@
 				05B849561E7A2B74003870BD /* FMDatabaseAdditions.m in Sources */,
 				05B849551E7A2B74003870BD /* FMDatabase.m in Sources */,
 				05B847B31E7A268D003870BD /* videoDeatilVC.m in Sources */,
-				05B849671E7A2E80003870BD /* HelpViewController.m in Sources */,
+				05B8498F1E7A3ECF003870BD /* HelpViewController.m in Sources */,
 				05B849381E7A29F2003870BD /* HYtabBar.m in Sources */,
 				05B847B41E7A268D003870BD /* HYTwoVCTableViewController.m in Sources */,
 				05B847AE1E7A268D003870BD /* HYVideoPlayVC.m in Sources */,
@@ -928,13 +928,13 @@
 				051DEC901E48697E00867766 /* main.m in Sources */,
 				05B849531E7A2B74003870BD /* JKDBHelper.m in Sources */,
 				05B847B51E7A268D003870BD /* HYTwoModel.m in Sources */,
-				05B849661E7A2E80003870BD /* Factory.m in Sources */,
+				05B8498E1E7A3ECF003870BD /* Factory.m in Sources */,
 				05B847681E7A268D003870BD /* HYFourVC.m in Sources */,
 				05B847951E7A268D003870BD /* HYOneModel.m in Sources */,
 				05B847B61E7A268D003870BD /* HYTwoCell.m in Sources */,
 				05B847B01E7A268D003870BD /* CardCellCollectionViewCell.m in Sources */,
-				05B849681E7A2E80003870BD /* UIColor+FlatColors.m in Sources */,
-				05B849691E7A2E80003870BD /* UIView+Addition.m in Sources */,
+				05B849901E7A3ECF003870BD /* UIColor+FlatColors.m in Sources */,
+				05B849911E7A3ECF003870BD /* UIView+Addition.m in Sources */,
 				05B849591E7A2B74003870BD /* FMResultSet.m in Sources */,
 				05B8493F1E7A29F2003870BD /* UIImage+HYImage.m in Sources */,
 				05B847AB1E7A268D003870BD /* HYoneCell.m in Sources */,
