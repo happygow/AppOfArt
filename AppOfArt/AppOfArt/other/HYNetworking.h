@@ -15,8 +15,6 @@
  *  下载进度
  *
  *  @param bytesRead                 已下载的大小
- *  @param totalBytesRead            文件总大小
- *  @param  1 totalBy tesExpected ToRead 还有多少需要下载
  */
 typedef void (^HYDownloadProgress)(int64_t bytesRead,
                                     int64_t totalBytesRead);
@@ -272,7 +270,6 @@ typedef void(^HYResponseFail)(NSError *error);
  *	@param success				上传成功回调
  *	@param fail					上传失败回调
  *
- *	@return
  */
 + (HYURLSessionTask *)uploadFileWithUrl:(NSString *)url
                            uploadingFile:(NSString *)uploadingFile
