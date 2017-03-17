@@ -50,5 +50,10 @@
 
 // 艺术
 #define artUrl @"http://api.artgoer.cn:8084/artgoer/api/v1/user/0/v3/topic/topicList?pageIndex=1&token=df68e038-143e-41cb-b554-456f78f184fc&topicLabelId=1"
+// 设计
+#define designURL @"http://api.artgoer.cn:8084/artgoer/api/v1/user/0/v3/topic/topicList?pageIndex=1&token=df68e038-143e-41cb-b554-456f78f184fc&topicLabelId=2"
+// 摄影
+#define photoURL @"http://api.artgoer.cn:8084/artgoer/api/v1/user/0/v3/topic/topicList?pageIndex=1&token=df68e038-143e-41cb-b554-456f78f184fc&topicLabelId=3"
+#define lifeURL @"http://api.artgoer.cn:8084/artgoer/api/v1/user/0/v3/topic/topicList?pageIndex=1&token=df68e038-143e-41cb-b554-456f78f184fc&topicLabelId=4"
 
 #endif /* Header_h */
