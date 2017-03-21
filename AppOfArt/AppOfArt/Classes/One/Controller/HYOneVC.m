@@ -47,6 +47,8 @@ static NSString *ID = @"cell";
 
 // pre offsetY
 @property (nonatomic , assign) CGFloat preTableViewOffsetY;
+// vcs
+@property (nonatomic , strong) NSMutableArray *vcs;
 
 
 @end
@@ -219,18 +221,20 @@ static NSString *ID = @"cell";
         _bottomScrollView.pagingEnabled = YES;
         
 //        NSArray *colors = @[[UIColor redColor],[UIColor blueColor],[UIColor grayColor],[UIColor greenColor],[UIColor purpleColor],[UIColor orangeColor],[UIColor whiteColor],[UIColor redColor],[UIColor blueColor],[UIColor grayColor],[UIColor greenColor]];
-        HYOneTVC *oneVC = [[HYOneTVC alloc] init];
-        HYTwoTVC_Design *twoVC = [[HYTwoTVC_Design alloc] init];
-        HYThreeTVC_Photo *threeVC = [[HYThreeTVC_Photo alloc] init];
-        HYFourTVC_Life *fourVC = [[HYFourTVC_Life alloc] init];
-            
+        
+//        HYTwoTVC_Design *twoVC = [[HYTwoTVC_Design alloc] init];
+//        HYThreeTVC_Photo *threeVC = [[HYThreeTVC_Photo alloc] init];
+//        HYFourTVC_Life *fourVC = [[HYFourTVC_Life alloc] init];
+//            
 
+        self.vcs = [[NSMutableArray alloc] initWithObjects:@"oneVC",@"twoVC"@"threeVC",@"fourVC", nil];
+        
         
        
-        for (int i = 0; i < 4; i ++) {
-            NSArray *vcs = @[oneVC,twoVC,threeVC,fourVC];
+        for (int i = 0; i < categorys.count; i ++) {
+            HYOneTVC *oneVC = [[HYOneTVC alloc] init];
             
-            vcs[i].view.frame = CGRectMake(HYScreenWidth * i, 0, HYScreenWidth, HYScreenHeight);
+            oneVC.view.frame = CGRectMake(HYScreenWidth * i, 0, HYScreenWidth, HYScreenHeight);
 //            twoVC.view.frame = CGRectMake(HYScreenWidth * 1, 0, HYScreenWidth, HYScreenHeight);
 //            threeVC.view.frame = CGRectMake(HYScreenWidth * 2, 0, HYScreenWidth, HYScreenHeight);
 //            fourVC.view.frame = CGRectMake(HYScreenWidth * 3, 0, HYScreenWidth, HYScreenHeight);
@@ -280,7 +284,7 @@ static NSString *ID = @"cell";
         [_segmentScrollView addSubview:self.currentSelectedImageView];
         _segmentScrollView.showsVerticalScrollIndicator = NO;
         _segmentScrollView.showsHorizontalScrollIndicator = YES;
-        _segmentScrollView.backgroundColor = [UIColor whiteColor];
+//        _segmentScrollView.backgroundColor = [UIColor whiteColor];
         NSInteger btnOffset = 0;
         for (int i = 0; i <categorys.count; i ++) {
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
